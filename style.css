@@ -1,0 +1,462 @@
+/* Custom Properties for Consistency */
+:root {
+  --primary-color: #B23A61; /* Deep Rose/Berry */
+  --secondary-color: #f8bbd0; /* Light Pink/Lavender */
+  --accent-color: #4a1f2c; /* Deep Violet/Brown for text */
+  --background-light: #fff9f9;
+  --card-bg: #ffeef3;
+  --text-light: #fff;
+  --text-dark: #4a1f2c;
+  --hover-shadow: 0 8px 20px rgba(160, 58, 90, 0.25);
+  --section-padding: 4rem 1.5rem;
+}
+
+/* --- Prevent horizontal overflow and ensure responsive media --- */
+/* Use border-box everywhere to avoid accidental overflow from padding/margins */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Prevent the page from horizontally scrolling */
+html, body {
+  overflow-x: hidden;
+}
+
+/* Make images and media responsive so they don't grow past their containers */
+img, picture, video, svg {
+  max-width: 100%;
+  height: auto;
+  display: block; 
+}
+
+
+/* Global Reset & Typography */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: var(--background-light);
+  color: var(--text-dark);
+  scroll-behavior: smooth;
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  letter-spacing: 0.5px;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+}
+
+.section-subtitle {
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    font-style: italic;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+/* --- NAVBAR (Enhanced) --- */
+.navbar {
+  width: 100%;
+  background: var(--card-bg); /* Use a softer tone */
+  border-bottom: 1px solid var(--secondary-color);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0,0 ,0,0.05); /* subtle shadow */
+}
+
+.nav-container {
+  /* Make the nav full width so logo/title can sit at the viewport's left edge */
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.6rem 1rem; /* smaller horizontal padding */
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-left: 0; /* ensure left block has no extra offset */
+  padding-left: 0; /* no internal left offset */
+}
+
+.nav-logo {
+  width: 60px; /* Increased from 40px to 50px */
+  height: 60px; /* Added height for perfect circle */
+  border-radius: 50%; /* Makes the image circular */
+  object-fit: cover;
+  margin-left: 0; /* force no left margin so logo sits flush */
+}
+
+.nav-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-left: 0.4rem; /* a little spacing from the logo */
+  line-height: 1; /* align with logo vertically */
+}
+.logo {
+  width: 150px; /* Slightly increased from 120px to 150px */
+  height: 150px; /* Added height for perfect circle */
+  border-radius: 50%; /* Makes the image circular */
+  object-fit: cover; /* Ensures image covers the circle without distortion */
+  margin-bottom: 1rem;
+  /* To move it to the left: */
+  display: block; /* Ensures margin auto works */
+  margin-left: 0; /* Align left */
+  margin-right: auto; /* Push to left */
+  text-align: left; /* Ensure it stays left if parent has text-align center */
+}
+.header {
+  text-align: left; /* Override previous center alignment */
+  padding: 3rem 1.5rem 2rem;
+  background: linear-gradient(135deg, #fce4ec, #f8bbd0);
+  animation: fadeIn 1s ease-in;
+}
+
+.nav-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.7rem;
+  align-items: center; /* make sure links align vertically with logo/title */
+}
+
+.nav-links li {
+  display: flex;
+  align-items: center;
+}
+
+/* Ensure nav items don't wrap to a new line and cause width overflow */
+.nav-links {
+  flex-wrap: nowrap;
+}
+
+/* Prevent nav container from contributing to horizontal scroll */
+.nav-container {
+  overflow: hidden;
+}
+
+.nav-links li a {
+  font-size: 1rem;
+  color: var(--accent-color);
+  font-weight: 600;
+}
+
+.nav-links li a:hover {
+  color: var(--primary-color);
+}
+
+/* --- HERO SECTION (Major Redesign) --- */
+.hero-section {
+    position: relative;
+    height: 90vh; /* More immersive height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(135deg, var(--secondary-color), #fce4ec);
+    overflow: hidden;
+    padding: 2rem 1rem;
+}
+
+.hero-visual {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    /* In a real site, this would be a calming, semi-transparent image or video */
+    background: url('placeholder_sound_bowl.jpg') center/cover;
+    opacity: 0.3; /* Subtle background visual */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 2rem;
+    animation: slideUp 1s ease-out;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    line-height: 1.1;
+}
+
+.hero-content .tagline {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    font-style: normal;
+    color: var(--accent-color);
+}
+
+.highlight {
+    color: var(--primary-color);
+    font-style: italic;
+}
+
+/* --- SECTIONS & CARDS (Standardized) --- */
+.modules, .services, .about-us, .testimonials, .contact {
+  padding: var(--section-padding);
+  text-align: center;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.8rem;
+  margin-top: 2.5rem;
+}
+
+.card {
+  background-color: var(--card-bg);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(160, 58, 90, 0.1);
+  transition: all 0.3s ease;
+  height: 100%; /* Ensures cards in a row have the same height */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: left;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--hover-shadow);
+}
+
+.module-card h3 {
+    color: var(--primary-color);
+    font-size: 1.25rem;
+}
+
+/* --- SERVICES SECTION --- */
+.service-card {
+    text-align: center;
+}
+
+.service-card p {
+    flex-grow: 1;
+    margin-bottom: 1.5rem;
+}
+
+.featured {
+    border: 3px solid var(--primary-color);
+    background-color: var(--secondary-color);
+}
+
+/* --- BUTTONS (Unified Styling) --- */
+.primary-cta {
+    background-color: var(--primary-color);
+    color: var(--text-light) !important;
+    border: none;
+    padding: 0.75rem 1.75rem;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    display: inline-block;
+}
+.primary-cta:hover {
+  background-color: #d94b78; /* Lighter shade on hover */
+  transform: scale(1.03);
+}
+
+.outline-btn {
+  background: none;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color) !important;
+  padding: 0.75rem 1.75rem;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  display: inline-block;
+  margin-top: 1.5rem;
+}
+.outline-btn:hover {
+  background-color: var(--primary-color);
+  color: var(--text-light) !important;
+}
+
+.large-cta {
+    font-size: 1.15rem;
+    padding: 1rem 2.5rem;
+}
+
+.book-btn {
+    /* Inherits from .primary-cta */
+    width: 100%;
+    margin-top: auto; /* Pushes button to the bottom of the card */
+}
+
+/* --- ABOUT US --- */
+.about-us {
+    background-color: #f7f1f3;
+}
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* --- TESTIMONIALS --- */
+.testimonials {
+    background: linear-gradient(0deg, var(--card-bg), var(--background-light));
+}
+
+.testimonial-card {
+    text-align: center;
+    border-left: 5px solid var(--primary-color);
+    background-color: #ffffff;
+}
+
+.quote {
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--accent-color);
+}
+
+.source {
+    font-weight: 600;
+    margin-top: 1rem;
+    color: var(--primary-color);
+}
+
+.load-more-btn {
+    margin-top: 3rem;
+}
+
+/* --- CONTACT & FOOTER (Cleaned up) --- */
+.contact {
+    background-color: var(--secondary-color);
+    padding-bottom: 6rem;
+}
+.contact-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-top: 3rem;
+}
+
+.footer {
+  padding: 3rem 1.5rem;
+  background-color: var(--accent-color);
+  color: #e9e7e7;
+  font-size: 0.9rem;
+  text-align: left;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+.footer-col h3 {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-col ul li a,
+.footer-col p a {
+    color: #e9e7e7;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.footer-col ul li a:hover,
+.footer-col p a:hover {
+    color: var(--primary-color);
+}
+
+.social-links {
+    margin-top: 1rem;
+    /* Icons would go here */
+}
+
+/* --- Animations (Updated Keyframe) --- */
+@keyframes slideUp {
+  from {opacity: 0; transform: translateY(20px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+/* --- MOBILE MENU (Media Query Remains) --- */
+.nav-toggle {
+  display: none;
+  font-size: 1.7rem;
+  cursor: pointer;
+  color: var(--primary-color);
+}
+
+@media(max-width: 992px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    .card-container {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+@media(max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 55px; /* Adjust based on new navbar height */
+    right: -100%;
+    background: var(--card-bg);
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    border-radius: 12px 0 0 12px;
+    transition: 0.4s;
+    box-shadow: -4px 4px 10px rgba(0,0,0,0.1);
+  }
+
+  .nav-links.active {
+    right: 0;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
+  .hero-content h1 {
+      font-size: 2rem;
+  }
+
+  .footer-container {
+      grid-template-columns: 1fr;
+      text-align: center;
+  }
+}

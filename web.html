@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hear N Heal | The Key to Your Inner Peace</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+  <div class="nav-container">
+    <div class="nav-left">
+      <img src="hearnheal.png" class="nav-logo" alt="Hear N Heal Logo" />
+      <span class="nav-title">Hear N Heal</span>
+    </div>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#modules">Modules</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About Us</a></li>
+      <li><a href="#testimonials">Reviews</a></li>
+      <li><a href="#book" class="nav-btn primary-cta">Book Your Session</a></li>
+    </ul>
+
+    <div class="nav-toggle" onclick="toggleMenu()">☰</div>
+  </div>
+</nav>
+
+  <audio src="videoplayback.mp4" autoplay loop muted preload="auto" style="display:none;"></audio>
+
+  <header class="hero-section">
+    <div class="hero-content">
+        <h1>Find Your Center Through <span class="highlight">Harmonic Healing</span></h1>
+        <p class="tagline">Experience profound rest and emotional balance with our certified sound and energy experts.</p>
+        <a href="#book" class="primary-cta large-cta">Start Your Journey Today</a>
+        <button id="unmuteBtn" class="outline-btn" onclick="unmuteAudio()">Enable Background Music</button>
+    </div>
+    <div class="hero-visual">[Image/Video of Singing Bowls or Calming Nature]</div>
+  </header>
+
+  <section class="about-us" id="about">
+      <h2>Who We Are</h2>
+      <p class="section-subtitle">More than just sound—it's a path to holistic well-being.</p>
+      <div class="about-content">
+        <p>At **Hear N Heal**, we blend ancient energy modalities with modern therapeutic sound science. Our mission is to provide an accessible, profound path to inner peace, clarity, and physical relief. Every session is curated by certified practitioners, ensuring a safe and transformative experience.</p>
+        <a href="#faq" class="outline-btn">Meet Our Experts & Philosophy</a>
+      </div>
+  </section>
+
+  <section class="modules" id="modules">
+    <h2>Sound Healing Modules</h2>
+    <p class="section-subtitle">Targeted frequencies designed for specific wellness goals.</p>
+    <div class="card-container" id="moduleList">
+      <div class="card module-card">
+        <h3>✨ Stress Relief</h3>
+        <p>Relaxing Theta and Alpha frequencies to calm your nervous system and melt away tension.</p>
+      </div>
+      <div class="card module-card">
+        <h3>🧠 Migraine & Headache</h3>
+        <p>Targeted delta and isochronic tones to ease cranial tension and promote lasting relief.</p>
+      </div>
+      <div class="card module-card">
+        <h3>😌 Anxiety Balance</h3>
+        <p>Gentle **Binaural Beats** for emotional stability, grounding, and peace.</p>
+      </div>
+      <div class="card module-card">
+        <h3>🌙 Sleep Improvement</h3>
+        <p>Deep **Delta Sounds** to guide your brain into natural, restorative sleep cycles.</p>
+      </div>
+      <div class="card module-card">
+        <h3>💖 Emotional Trauma Release</h3>
+        <p>Vibrations that harmonize blocked energy and facilitate gentle emotional processing.</p>
+      </div>
+      <div class="card module-card">
+        <h3>🎯 Focus & Mental Clarity</h3>
+        <p>**Alpha Waves** to sharpen your mind, boost concentration, and enhance productivity.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="services" id="services">
+    <h2>Our Holistic Services</h2>
+    <p class="section-subtitle">In-person and virtual sessions for a complete wellness journey.</p>
+    <div class="card-container service-container">
+      <div class="card service-card">
+        <h3>Reiki Energy Healing</h3>
+        <p>Energy sessions that restore balance, harmony, and clear your body's vital centers.</p>
+        <button class="book-btn primary-cta">Explore Reiki</button>
+      </div>
+      <div class="card service-card featured">
+        <h3>Sound Bath Therapy</h3>
+        <p>Therapeutic group or private sound baths using gongs, bowls, and chimes for deep transformation.</p>
+        <button class="book-btn primary-cta">Book Sound Bath</button>
+      </div>
+      <div class="card service-card">
+        <h3>Integrative Counselling</h3>
+        <p>Professional emotional support combining traditional talk therapy with holistic tools.</p>
+        <button class="book-btn primary-cta">Find a Counselor</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials" id="testimonials">
+    <h2>What Our Clients Say</h2>
+    <div class="card-container testimonial-container">
+      <div class="card testimonial-card">
+        <p class="quote">"I walked in with a crippling migraine and left feeling lighter and completely pain-free. It was truly a miracle."</p>
+        <p class="source">- Jessica M., Stress Relief Client</p>
+      </div>
+      <div class="card testimonial-card">
+        <p class="quote">"The Sleep Improvement module has changed my life. I finally feel rested. The sessions are deeply professional and calming."</p>
+        <p class="source">- David P., Sleep Improvement</p>
+      </div>
+      <div class="card testimonial-card">
+        <p class="quote">"The most profound healing experience I've ever had. I feel emotionally unblocked and full of positive energy."</p>
+        <p class="source">- Sofia K., Emotional Trauma Release</p>
+      </div>
+    </div>
+    <button class="outline-btn large-cta load-more-btn">Read More Reviews</button>
+  </section>
+
+  <section class="contact" id="book">
+    <h2>Ready to Hear N Heal?</h2>
+    <p class
